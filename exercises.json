@@ -1,0 +1,32 @@
+[
+    {
+        "chapter":"演算・データ構造",
+        "exercises":{
+            "10 算術演算":"10_arithmetic_ops.py",
+            "11 文字列":"11_string.py",
+            "12 リスト・タプル":"12_list_tuple.py",
+            "13 辞書":"13_dict.py",
+            "14 論理・比較演算":"14_logi_comp_ops.py"
+     		}            
+    },
+    {
+        "chapter":"制御文",
+        "exercises":{
+            "21 if文":"21_if.py",
+            "22 for文1":"22_for.py",
+            "23 for文2":"23_for.py",
+            "24 while文":"24_while.py"
+        	}
+    },
+    {
+        "chapter":"関数，グローバル変数",
+        "exercises":{
+            "30 関数の規則1":"30_function.py",
+            "31 関数の読み取り1":"31_function.py",
+            "32 関数のデフォルト引数":"32_function_default_arg.py",
+            "33 関数とグローバル変数":"33_function_global_var.py",
+            "34 関数の読み取り2":"34_function.py",
+            "35 関数の読み取り3":"35_function.py"
+            }
+     }            
+]
