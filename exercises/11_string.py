@@ -43,6 +43,6 @@ print(f"{num1},{num2}")
 # </select>
 
 # <explanation>
-# ポイント: 
-# ・f-stringの形式はf"文字列・・・{変数名}・・・文字列"
+# Key points:
+# - f-string syntax: f"...{variable_name}..."
 # </explanation>

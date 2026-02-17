@@ -17,9 +17,9 @@ _VAR_=3 # <replace p="1.0" from='"=3"' to='["==_VAR_+1","+1","=+1","=_VAR_/2","=
 print(_VAR_)
 
 # <explanation>
-# ポイント: 
-# ・/で割った結果はfloat型
-# ・//で割った結果はint型(小数点以下切り捨て)
-# ・=は代入，==は比較
-# ・%は割ったときの余り
+# Key points:
+# - / (division) always returns a float
+# - // (floor division) returns an int (truncates the decimal)
+# - = is assignment; == is comparison
+# - % returns the remainder of division
 # </explanation>

@@ -143,7 +143,7 @@ function init(){
     window.console = console;
 
 
-    output.session.setValue("読み込み中...\n");
+    output.session.setValue("Loading...\n");
 
     // init Pyodide
     async function main() {
@@ -153,7 +153,7 @@ function init(){
         // await pyodide.loadPackage("matplotlib");
         // await pyodide.loadPackage("scikit-learn");
         
-        output.session.setValue("準備完了!\n");    
+        output.session.setValue("Ready!\n");
         return pyodide;
     }
     pyodideReadyPromise = main();
@@ -248,13 +248,13 @@ function init_ui(){
             executed = true;
             let input_data = input.getValue().trim().replaceAll(" ","");
             let output_data = output.getValue().trim().replaceAll(" ","");
-            let result = ((output_data.includes("PythonError:") && input_data==="") || 
-                        output_data === input_data)? "正解":"不正解";
+            let result = ((output_data.includes("PythonError:") && input_data==="") ||
+                        output_data === input_data)? "Correct":"Incorrect";
 
             end_time = performance.now();
             let elapsed_time = (end_time-start_time)*0.001;
             
-            if (result==="正解"){
+            if (result==="Correct"){
                 score+=10;
                 total_time += elapsed_time;
             }
@@ -263,25 +263,25 @@ function init_ui(){
             }
 
             each_score[currentCode]=score;
-            detail_log.push(currentCode+" "+random_seed+" "+elapsed_time.toFixed(3)+"秒 "+result);
+            detail_log.push(currentCode+" "+random_seed+" "+elapsed_time.toFixed(3)+"s "+result);
 
             let target_score = document.querySelector("#target_score").value;
             target_score = parseInt(target_score);
             if (score===target_score){
                 let obj = document.querySelector("#achieved");
-                obj.innerHTML=""+target_score+"点";
+                obj.innerHTML="🎉 "+target_score+" pts";
                 obj.style.visibility = 'visible';
                 setTimeout(function(){
                     document.querySelector("#achieved").style.visibility = 'hidden';
                 }, 800);
             }
 
-            let str="--- 各問題のスコア ---\n";
+            let str="--- Score per Exercise ---\n";
             const sortedKeys = Object.keys(each_score).sort();
             sortedKeys.forEach(key => {
-                str+=`${key}: ${each_score[key]}点\n`;
+                str+=`${key}: ${each_score[key]} pts\n`;
             });
-            str+="\n-- 詳細 --\n";
+            str+="\n-- Details --\n";
             // alert(str);
             for (const e of detail_log) {
                 str+=e+"\n";
@@ -291,12 +291,12 @@ function init_ui(){
 
 
             input.setOptions({readOnly: true});
-            const deco_result = (result==="正解")? result+"！！" : result+"...";
-            if (deco_result.includes("不正解")){
-                output.session.setValue(output.getValue()+"\n"+deco_result+"\n"+elapsed_time.toFixed(3)+"秒"+"\n\n"+explanations);
+            const deco_result = (result==="Correct")? result+" !!" : result+"...";
+            if (deco_result.includes("Incorrect")){
+                output.session.setValue(output.getValue()+"\n"+deco_result+"\n"+elapsed_time.toFixed(3)+" sec"+"\n\n"+explanations);
             }
             else {
-                output.session.setValue(output.getValue()+"\n"+deco_result+"\n"+elapsed_time.toFixed(3)+"秒");
+                output.session.setValue(output.getValue()+"\n"+deco_result+"\n"+elapsed_time.toFixed(3)+" sec");
             }
         });
     });
@@ -392,7 +392,7 @@ function setMaterial(){
 
     const sel = document.querySelector('#exercises');
     if (!sel.value){
-        alert("ファイルがありません.");
+        alert("No file selected.");
         return;
     }
 

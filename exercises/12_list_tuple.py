@@ -22,9 +22,9 @@ print(_VAR_[0])# <replace p = "1.0" from = "0" to= '[":1",":2",":3","1:","2:","3
 # </select>
 
 # <explanation>
-# ポイント: 
-# ・リストは[1, 2, 3]，タプルは(1, 2, 3)のように作成
-# ・リストは変更可，タプルは変更不可
-# ・アクセス時はどちらも同じ．list[0]，tuple[0]
-# ・開始番号は含み，終わり番号は含まない.（a[0:2]のとき2番は含まない）
+# Key points:
+# - Lists use [ ], e.g. [1, 2, 3]; tuples use ( ), e.g. (1, 2, 3)
+# - Lists are mutable; tuples are immutable
+# - Both are accessed the same way: list[0], tuple[0]
+# - Slicing is start-inclusive, end-exclusive: a[0:2] includes indices 0 and 1, not 2
 # </explanation>

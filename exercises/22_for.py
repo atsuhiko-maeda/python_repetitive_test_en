@@ -13,10 +13,10 @@ for _VAR_ in [0,1,2]: # <replace p="1.0" from='"[0,1,2]"' to='["[0,1,2]","[1,2]"
 print("d") # <skipLine p="0.5" />
 
 # <explanation>
-# ポイント: 
-# ・range(3)-->0,1,2・・・3は含まない
-# ・range(1, 3)-->1,2・・・1は含み，3は含まない
-# ・mylist[0:2]・・・0,1番目（2番は含まない）
-# ・mylist[0:-2]・・・0〜後ろから1番目（-2番は含まない）
-# ・[0,1,2]・・・for文で使うと，すべて抽出される
+# Key points:
+# - range(3) --> 0, 1, 2  (3 is excluded)
+# - range(1, 3) --> 1, 2  (1 is included, 3 is excluded)
+# - mylist[0:2] --> elements at index 0 and 1 (index 2 excluded)
+# - mylist[0:-2] --> from index 0 up to (not including) the second-to-last element
+# - Iterating over a list [0,1,2] with for yields all elements in order
 # </explanation>

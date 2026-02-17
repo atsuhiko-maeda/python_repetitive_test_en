@@ -15,6 +15,7 @@ _FUNC1_(a)# <replace p="1.0" from='"a"' to='["", "\"a\"", "\"b\""]' />
 # </select>
 
 # <explanation>
-# ・デフォルト引数はdef func(a, b=10):のように=で初期値を設定
-# ・関数呼び出し時， デフォルト引数があれば，その引数は省略可能
+# Key points:
+# - Default arguments are set with = in the definition: def func(a, b=10)
+# - When calling a function, default arguments can be omitted
 # </explanation>

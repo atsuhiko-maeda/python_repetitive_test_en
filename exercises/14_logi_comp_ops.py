@@ -38,8 +38,8 @@ print(a and b)# <replace p = "1.0" from = '"a and b"' to= '["a and b","a or b","
 
 
 # <explanation>
-# ポイント: 
-# ・True and True --> True
-# ・True and False --> False
-# ・True or False --> True
+# Key points:
+# - True and True  --> True
+# - True and False --> False
+# - True or False  --> True
 # </explanation>

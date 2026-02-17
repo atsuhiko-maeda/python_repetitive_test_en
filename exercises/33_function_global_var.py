@@ -11,8 +11,8 @@ _FUNC_()
 print(_VAR_)
 
 # <explanation>
-# ポイント: 
-# ・関数内で変数に代入するとデフォルトはローカル変数になる
-# ・関数内でグローバル変数を更新したい場合はglobal宣言が必要
-# ・グローバル変数の値を参照するだけならはglobal宣言は不要
+# Key points:
+# - Assigning to a variable inside a function creates a local variable by default
+# - To modify a global variable inside a function, use the "global" declaration
+# - You can read a global variable without "global" — only writing requires it
 # </explanation>
